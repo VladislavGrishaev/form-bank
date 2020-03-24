@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<section class="form">
+    <div class="form__wrap">
+
+        <div class="form__title_logo">
+            <div class="form__logo">
+                <img src="img/logo.png" alt="">
+            </div>
+            <div class="form__link_logo">
+                <a href="https://delo.ru/">delo.ru</a>
+            </div>
+        </div>
+
+        <div class="form__info_card">
+            <div class="form__pay_card">
+                <div class="form__info_pay">
+                    <div class="form__summa">
+                        <p>Сумма к оплате:</p>
+                        <span>2000 rub</span>
+                    </div>
+                    <div class="form__product">
+                        <p class="form__static_name">Магазин: <span>Widget</span></p>
+                        <p class="form__static_name">Описание покупки: <span>Гвоздика и роза</span></p>
+                    </div>
+                </div>
+                <div class="form__secure_connect">
+                    <img src="img/scon.png" alt="">
+                    <p>Безопасное соединение</p>
+                </div>
+            </div>
+            <form action="" onsubmit="return validate();" id="data" class="card" name="formPay">
+
+                <div class="card-front">
+                    <div id="numError">Введите номер карты</div>
+                    <input type="text" class="number-card" id="numberCard" name="cardcode"
+                        pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}" placeholder="Введите номер карты">
+
+                    <div class="valid-card">
+                        <div id="validError">Введите срок действия карты</div>
+                        <label for="date">valid thru</label>
+                        <input pattern="[0-9]{2}$[0-9]{2}" name="code" id="date" type="text" id="dateCard" maxlength="5"
+                            class="date-card" placeholder="ММ/ГГ" step="0.01">
+                    </div>
+                    <div id="nameError">Введите имя держателя карты</div>
+                    <input type="text" name="name" id="userName" class="name-user-card"
+                        placeholder="Имя держателя карты">
+                </div>
+                <div class="card-back">
+                    <div class="back-line"></div>
+                    <div class="help-popup" id="helpShow">
+                        <div class="help-info"></div>
+                        <p>CVC2 - последние три цифры, указанные на полосе
+                            для подписи с обратной стороны карты
+                        </p>
+                    </div>
+                    <div class="code-card">
+                        <input type="password" maxlength="3" id="userPassword" placeholder="CW/CVC">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="form__btn_pay">
+            <a href="">Вернуться в магазин</a>
+            <button type="submit" form="data" id="send">Отправить</button>
+        </div>
+    </div>
+
+    <div class="form__info">
+        <div class="form__info_img">
+            <img src="img/mir.png" alt="">
+            <img src="img/visa.png" alt="">
+            <img src="img/mc.png" alt="">
+            <img src="img/pci-dss.png" class="pci-cart" alt="">
+        </div>
+        <p>Все интернет платежи защищены сертификатом SSL и протоколом 3-D Secure</p>
+    </div>
+
+</section>
+
+
+<script>
+
+
+
+    //номер карты
+    var numberCard = document.getElementById('numberCard');
+    var numError = document.getElementById('numError');
+
+    //срок действия карты
+    var date = document.getElementById('date');
+    var validError = document.getElementById('validError');
+
+    //владелец карты
+    var userName = document.getElementById('userName');
+    var nameError = document.getElementById('nameError');
+
+    //cw/cvc
+    var pass = document.getElementById('userPassword');
+    var showPopup = document.getElementById('helpShow');
+
+
+
+
+    document.getElementById('send').onclick = function validate(e) {
+        e.preventDefault()
+        //номер карты
+        numberCard.classList.remove('solid-red');
+        numError.classList.remove('error-number');
+
+        //срок действия карты
+        date.classList.remove('solid-red');
+        validError.classList.remove('error-valid');
+
+        //владелец карты
+        userName.classList.remove('solid-red');
+        nameError.classList.remove('error-name');
+
+        //cw/cvc
+        pass.classList.remove('solid-red');
+        showPopup.classList.remove('focus-popup');
+
+        if (numberCard.value == 0 || date.value == 0 || userName.value == 0) {
+            //номер карты
+            numberCard.classList.toggle('solid-red');
+            numError.classList.toggle('error-number');
+
+            //срок действия карты
+            date.classList.toggle('solid-red');
+            validError.classList.toggle('error-valid');
+
+            //владелец карты
+            userName.classList.toggle('solid-red');
+            nameError.classList.toggle('error-name');
+
+            //cw/cvc
+            pass.classList.toggle('solid-red');
+            showPopup.classList.toggle('focus-popup');
+
+            console.log('no')
+            return false
+        }
+        else {
+
+            console.log('yes')
+            return false
+        }
+
+        return true
+
+    }
+
+
+    //-------------------------//
+
+    var userName = document.getElementById('userName');
+    var inputPass = document.getElementById("userPassword");
+    var date = document.getElementById("date");
+
+    userName.addEventListener('input', () => {
+        userName.value = userName.value.replace(/[^a-z, A-Z ]/, '');
+    });
+    inputPass.addEventListener('input', () => {
+        inputPass.value = inputPass.value.replace(/[^[0-9]/, '');
+    });
+    date.addEventListener('input', () => {
+        date.value = date.value.replace(/[^[0-9]/, '');
+    });
+    //-------------------------//
+
+
+
+    //--------------------//
+    var inputCardNumber = formPay.cardcode;
+
+    for (var i in ['input', 'change', 'blur', 'keyup']) {
+        inputCardNumber.addEventListener('input', formatCardCode, false);
+    }
+    function formatCardCode() {
+        var cardCode = this.value.replace(/[^\d]/g, '').substring(0, 16);
+        cardCode = cardCode != '' ? cardCode.match(/.{1,4}/g).join(' ') : '';
+        this.value = cardCode;
+    }
+
+    var inputCardr = formPay.code;
+
+    for (var i in ['input', 'change', 'blur', 'keyup']) {
+        inputCardr.addEventListener('input', formatCode, false);
+    }
+    function formatCode() {
+        var cardNum = this.value.replace(/[^\d]/g, '').substring(0, 4);
+        cardNum = cardNum != '' ? cardNum.match(/.{1,2}/g).join(' ') : '';
+        this.value = cardNum;
+    }
+    //--------------------//
+
+
+
+
+
+
+
+</script>
+
+
+<body>
+
+</body>
+
+</html>

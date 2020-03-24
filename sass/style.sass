@@ -1,0 +1,390 @@
+@font-face
+    font-family: "Formular"
+    src : url("../fonts/Formular.ttf")
+body
+    margin: 0
+    padding: 0
+    background-color: #f8f8f8
+    p
+        margin: 0
+        padding: 0
+
+    .form
+        display: flex
+        justify-content: space-between
+        padding-left: 20px
+        padding-right: 20px
+        margin: 0 auto
+        background-color: #fff
+        margin-top: 25%
+        margin-bottom: 25%
+        -webkit-box-shadow: 0px 0px 9px -2px rgba(0,0,0,0.75)
+        -moz-box-shadow: 0px 0px 9px -2px rgba(0,0,0,0.75)
+        box-shadow: 0px 0px 9px -2px rgba(0,0,0,0.75)
+        width: 745px
+        font-family: Formular
+        &__info
+            width: 23%
+            padding-left: 20px
+        &__info_img
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding-top: 97px   
+        &__info_img img
+            padding-bottom: 15px
+        &__title_logo
+            display: flex
+            align-items: center
+            justify-content: space-between
+            padding-top: 35px
+            padding-bottom: 25px
+        .pci-cart
+            padding-bottom: 0
+        &__info p
+            font-size: 12px
+            color: #9b908a
+            padding-top: 20px
+            padding-bottom: 265px
+        &__wrap
+            width: 74%
+        &__link_logo a, &__btn_pay a
+            color: #f77064
+            text-decoration: none
+            border-bottom: 1px solid #f66164
+            font-size: 14px
+        &__summa p, &__summa span
+            color: #3c3c3c
+        &__summa p, &__static_name
+            font-size: 14px
+        &__secure_connect p
+            font-size: 12px
+        &__summa p
+            padding-right: 10px
+        &__summa span
+            font-size: 20px
+            text-transform: uppercase
+            font-weight: bold
+        &__summa
+            font-weight: bold
+            display: flex
+            align-items: center
+            padding-bottom: 15px
+        &__secure_connect p
+            color: #96938a
+            padding-left: 10px
+        &__secure_connect
+            display: flex
+            align-items: center
+            width: 23%
+        &__info_card
+            background-color: #f8f8f8
+            border-radius: 5px
+            border: 1px solid #e5e5e5
+            padding-top: 25px
+            padding-left: 30px
+            padding-right: 25px
+        &__static_name
+            padding-top: 15px
+        &__pay_card
+            display: flex
+            justify-content: space-between
+            align-items: flex-start
+        .card
+            background-color: #f0f0ee
+            border: 1px solid #e6e6e6
+            border-radius: 10px
+            margin-top: 25px
+            margin-bottom: 75px
+            width: 282px
+        .card-front
+            padding-left: 25px
+            padding-top: 20px
+            padding-bottom: 20px
+            padding-right: 25px
+            display: flex
+            flex-direction: column
+            -webkit-box-shadow: 0px 5px 8px -3px rgba(0,0,0,0.75)
+            -moz-box-shadow: 0px 5px 8px -3px rgba(0,0,0,0.75)
+            box-shadow: 0px 5px 8px -3px rgba(0,0,0,0.75)
+            border-radius: 10px
+            position: relative
+            z-index: 1
+            background-color: #f0f0ee
+        input
+            color: #8c8e86
+            height: 35px
+            border-radius: 5px
+            border: 1px solid #b5b5b5
+            background-color: #fff
+            text-transform: uppercase
+        input::placeholder
+            //padding-left: 15px
+            color: #8c8e86
+            text-transform: none
+        input:focus
+            outline: none
+            //padding-left: 15px
+        .card-back
+            position: absolute
+        .valid-card
+            margin-left: 40px
+            display: flex
+            align-items: baseline
+        .valid-card label
+            color: #8c8e86
+            text-transform: uppercase
+            font-size: 12px
+        .number-card
+            width: 215px
+            margin-bottom: 15px
+        .name-user-card
+            width: 200px
+        .date-card
+            //width: 75px
+            width: 60px
+            margin-bottom: 15px
+            margin-left: 10px
+        .card-back
+            -webkit-box-shadow: 0px 5px 8px -3px rgba(0,0,0,0.75)
+            -moz-box-shadow: 0px 5px 8px -3px rgba(0,0,0,0.75)
+            box-shadow: 0px 5px 8px -3px rgba(0,0,0,0.75)
+            border-radius: 10px
+            background-color: #e0ddd8
+            width: 282px
+            height: 175px
+            margin-top: -150px
+            margin-left: 100px
+        .back-line
+            background-color: #8e8b85
+            height: 39px
+            width: 100%
+            margin-top: 25px
+        .card-back input
+            width: 65px
+            margin-top: 6px
+        .card-back input::placeholder
+            padding-right: 15px
+        .code-card
+            display: flex
+            justify-content: flex-end
+            padding-right: 8px
+        &__btn_pay button
+            background-color: #f65e64
+            border-radius: 20px
+            border: none
+            color: #fff
+            font-size: 14px
+            padding-top: 11px
+            padding-bottom: 11px
+            padding-left: 28px
+            padding-right: 28px
+            cursor: pointer
+        &__btn_pay
+            padding-top: 17px
+            padding-bottom: 51px
+            display: flex
+            align-items: center
+            justify-content: space-between
+        &__link_logo a:hover, &__btn_pay a:hover
+            color: #b82113
+            border-bottom: 1px solid #b82113 
+        &__btn_pay button:hover
+            background-color: #b82113 
+        &__btn_pay button:focus
+            outline: none
+        #numberCard, #userName, #date
+            padding-left: 15px
+        #userPassword
+            padding-left: 10px
+
+
+
+
+        .solid-red
+            border: 1px solid #f65e64
+        .solid-green
+            border: 1px solid #108719
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button 
+            -webkit-appearance: none
+            margin: 0
+        input[type=number]
+            -moz-appearance: textfield
+        .help-popup
+            background-color: #fff
+            border-radius: 10px
+            font-size: 12px
+            color: #60625b
+            position: absolute
+            width: 180px
+            margin-left: 200px
+            margin-top: 55px
+            padding: 10px
+            //display: none
+            opacity: 0
+        .help-info
+            background-color: #fff
+            height: 10px
+            width: 10px
+            position: absolute
+            margin-top: -15px
+            transform: rotate(45deg)
+            margin-left: 15px
+        .help-popup p
+            position: relative
+        .focus-popup
+            //display: block
+            opacity: 1
+            transition: 0.5s
+        
+        .error-number, .error-name, .error-valid
+            color: red
+            font-size: 10px
+            position: absolute
+            display: block !important
+        .error-number
+            margin-top: -15px
+        .error-name
+            margin-top: 93px
+        .error-valid
+            margin-top: -13px
+            margin-left: 40px
+        #numError, #nameError, #validError
+            display: none
+        
+
+
+
+    @media screen and ( max-width:991px)
+        .form
+            width: 625px
+        .help-popup
+            border: 1px solid #000
+        .help-info
+            border-top: 1px solid #000
+            border-left: 1px solid #000
+            margin-top: -17px !important
+
+    @media screen and ( max-width:768px)
+        .form
+            width: auto
+            flex-direction: column
+            margin-left: 20px
+            margin-right: 20px
+            &__wrap, &__info
+                width: 100%
+            &__info
+                padding-left: 0
+            &__info_img
+                padding-top: 0
+                flex-direction: row
+            &__info_img img
+                padding-bottom: 0
+                padding-right: 15px
+            &__btn_pay
+                padding-bottom: 17px
+            &__info p
+                padding-bottom: 35px
+            .help-popup, .help-info
+                border: none
+            .help-info
+                margin-top: -15px !important
+
+    @media screen and ( max-width:630px)
+        .form
+            .card-back
+                margin-top: -45px
+                margin-left: 0
+            .card
+                margin-bottom: 165px
+
+    @media screen and ( max-width:564px)
+        .form
+            &__secure_connect
+                width: 100px
+
+    @media screen and ( max-width:540px)
+        .form
+            .help-popup
+                margin-left: 60px
+            .help-info
+                margin-left: 158px
+
+    @media screen and ( max-width:524px)
+        .form
+
+            &__info_img
+                justify-content: space-between
+            &__info_img img
+                padding-right: 0
+
+    @media screen and ( max-width:480px)
+        .form
+            &__pay_card
+                flex-direction: column
+            &__secure_connect
+                margin-top: 20px
+            &__static_name
+                padding-top: 10px
+            &__summa
+                padding-bottom: 10px
+
+    @media screen and ( max-width:423px)
+        .form
+            .card
+                margin-left: auto
+                margin-right: auto
+            &__info_card
+                padding-left: 15px
+                padding-right: 15px
+                padding-top: 20px
+            &__secure_connect
+                width: auto
+    
+    @media screen and ( max-width:398px)
+        .form
+            .card, .card-back
+                width: 250px
+            .number-card, .name-user-card
+                width: 203px
+            .valid-card
+                margin-left: 20px
+            &__info_img
+                flex-direction: column
+            &__info_img img
+                padding-bottom: 15px
+            .help-popup
+                margin-left: 33px
+            .card-front
+                padding-left: 15px
+                padding-right: 15px
+
+    @media screen and ( max-width:375px)
+        .form
+            .card-front
+                padding-left: 15px
+                padding-right: 15px
+
+
+    @media screen and ( max-width:365px)  
+        .form
+            padding-left: 10px
+            padding-right: 10px
+            &__info_card
+                padding-left: 10px
+                padding-right: 10px
+                padding-top: 15px  
+            &__btn_pay
+                flex-direction: column-reverse
+            &__btn_pay a
+                margin-top: 15px
+            
+    @media screen and ( max-width:334px)
+        .form
+            .card, .card-back  
+                width: 235px
+            .number-card, .name-user-card
+                width: 189px
+            .help-popup
+                margin-left: 20px
